@@ -37,4 +37,4 @@ __________________________________
 En tant que "ADMIN" je peux Consulté la liste des Utilisateurs global et voir leurs données (Teams, Project, etc ...) /// ADMIN - OWNER
 En tant que "ADMIN" je peux Consulté la liste des Projects et voir les données nécessaire (Nmbre de membre, créer depuis etc ...) /// ADMIN - OWNER
 En tant que "ADMIN" je peux Consulté la liste des Teams et voir les donnée nécessaire (Nmbre de membre, créer depuis etc ...) /// ADMIN - OWNER
-
+- En tant que "ADMIN" je peux Supprimer un membre dans une équipe. /// ADMIN - OWNER
