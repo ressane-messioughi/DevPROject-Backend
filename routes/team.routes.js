@@ -1,20 +1,13 @@
 import express from 'express';
+import teamController from "../controllers/team.controller.js"
+import { authenticate } from '../middleware/auth.middleware.js';
 
-import {
-  getProjectTeam,
-  inviteMember,
-  removeMember,
-  updateMemberRole,
-} from '../controllers/team.controller.js';
+const router = express.Router({ mergeParams: true });
 
-const router = express.Router();
+// Récupération de toutes les membres de l'équipe du projet selectionné 
+router.get('/', authenticate, teamController.getUserTeam );
 
-router.get('/:projectId', getProjectTeam);
-
-router.post('/:projectId/invite', inviteMember);
-
-router.put('/:projectId/:userId/role', updateMemberRole);
-
-router.delete('/:projectId/:userId', removeMember);
+// Suppression d'un utilisateur dans une équipe (projet)
+router.delete("/:team_id", authenticate, teamController.deleteTeamUser)
 
 export default router;
